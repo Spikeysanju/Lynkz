@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LinksActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ImageButton
+        android:id="@+id/back_btn_links"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:src="@drawable/ic_arrow_back_black_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/links_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/googlesans_bold"
+        android:text="Android Devs"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/back_btn_links"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/links_rv"
+        android:layout_width="0dp"
+        android:layout_height="682dp"
+
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/links_title_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "394190349730",
+    "firebase_url": "https://lynkz-3f65c.firebaseio.com",
+    "project_id": "lynkz-3f65c",
+    "storage_bucket": "lynkz-3f65c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394190349730:android:df854a364d03dbbb33befb",
+        "android_client_info": {
+          "package_name": "www.sanju.lynkz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394190349730-jbtfikocudmj4o615fm6of7luv7is2v2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.sanju.lynkz",
+            "certificate_hash": "13c9f7fc0940ac535583f36c85e0541d391856e0"
+          }
+        },
+        {
+          "client_id": "394190349730-4smu4qra7jubvn1u7bocae6485d7f1a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIb-_bexfX1y4ejGwA4FxdE52tHlfbW_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394190349730-4smu4qra7jubvn1u7bocae6485d7f1a4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

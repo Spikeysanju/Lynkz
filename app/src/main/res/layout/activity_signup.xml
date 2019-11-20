@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.SignupActivity">
+
+
+
+    <Button
+        android:id="@+id/csignUpBtn"
+        android:layout_width="249dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:text="SIGN UP"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpassword" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="51dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cusername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/googlesans_bold"
+            android:text="Welcome to Patio!"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="It's time to take care of your patients"
+            android:textColor="@color/dim_gray"
+            android:textSize="10dp"
+
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Already have an account?"
+        android:textColor="@color/dim_gray"
+        app:layout_constraintBottom_toTopOf="@+id/csigninBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/csignUpBtn" />
+
+    <TextView
+        android:id="@+id/csigninBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginBottom="78dp"
+        android:fontFamily="@font/googlesans_bold"
+        android:text="SIGN IN NOW"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/cpassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="59dp"
+        android:defaultFocusHighlightEnabled="true"
+        android:fontFamily="@font/googlesans_regular"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/csignUpBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cemail"
+        app:met_baseColor="@android:color/black"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Password"
+        app:met_primaryColor="@color/dodger_blue"
+        app:met_singleLineEllipsis="true" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/cusername"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:defaultFocusHighlightEnabled="true"
+        android:fontFamily="@font/googlesans_regular"
+        android:hint="Username"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/cphonenumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:met_baseColor="@android:color/black"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Username"
+        app:met_maxCharacters="20"
+        app:met_primaryColor="@color/dodger_blue"
+        app:met_singleLineEllipsis="true" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/cphonenumber"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:defaultFocusHighlightEnabled="true"
+        android:fontFamily="@font/googlesans_regular"
+        android:hint="Phone no"
+        android:inputType="phone"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/cemail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cusername"
+        app:met_baseColor="@android:color/black"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Phone no"
+        app:met_maxCharacters="10"
+        app:met_primaryColor="@color/dodger_blue"
+        app:met_singleLineEllipsis="true" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/cemail"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:defaultFocusHighlightEnabled="true"
+        android:fontFamily="@font/googlesans_regular"
+        android:hint="Email ID"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/cpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cphonenumber"
+        app:met_baseColor="@android:color/black"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Email ID"
+        app:met_primaryColor="@color/dodger_blue"
+        app:met_singleLineEllipsis="true" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

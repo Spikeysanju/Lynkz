@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:elevation="2dp"
+    android:id="@+id/card_launch"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/launchTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="URL"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/googlesans_bold"
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"
+            />
+
+        <TextView
+            android:id="@+id/url_links"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pavni"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:fontFamily="@font/googlesans_regular"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+
+        <io.github.ponnamkarthik.richlinkpreview.RichLinkView
+            android:id="@+id/richLinkView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+        </io.github.ponnamkarthik.richlinkpreview.RichLinkView>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
