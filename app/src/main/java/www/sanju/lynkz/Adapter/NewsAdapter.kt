@@ -5,11 +5,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.news_rv_layout.view.*
-import www.sanju.lynkz.Activity.SubcategoryActivity
+import www.sanju.lynkz.Activity.WebViewActivity
 import www.sanju.lynkz.Models.News
 import www.sanju.lynkz.R
 
@@ -20,9 +19,11 @@ class NewsAdapter (val context: Context?, private val news: ArrayList<News>): Re
 
         holder.itemView.newsTitle.text = news[position].title
         holder.itemView.newsAuthor.text = news[position].author
-       // holder.itemView.newsDescription.text = news[position].description
+        holder.itemView.newsDescription.text = news[position].url
         holder.itemView.newsTime.text = news[position].publishedAt
+        holder.itemView.newsImg.clipToOutline = true
         Picasso.get().load(news[position].urlToImage).into(holder.itemView.newsImg)
+
 
         //Image Animation
         //  holder.newsImageUrl.animation = AnimationUtils.loadAnimation(context,R.anim.fade_image)
@@ -55,9 +56,10 @@ class NewsAdapter (val context: Context?, private val news: ArrayList<News>): Re
 class ViewHolder(v: View?) : RecyclerView.ViewHolder(v!!),View.OnClickListener {
     override fun onClick(v: View?) {
 
-//        val intent = Intent(v!!.context,LaunchDetailsActivity::class.java)
-//        intent.putExtra("key",flightNumber.text)
-//        v.context.startActivity(intent)
+        val intent = Intent(v!!.context, WebViewActivity::class.java)
+        intent.putExtra("key", newsDesc.text)
+        v.context.startActivity(intent)
+
 
     }
 

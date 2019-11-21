@@ -45,11 +45,6 @@
             />
 
 
-        <io.github.ponnamkarthik.richlinkpreview.RichLinkView
-            android:id="@+id/richLinkView"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-        </io.github.ponnamkarthik.richlinkpreview.RichLinkView>
 
 
     </LinearLayout>

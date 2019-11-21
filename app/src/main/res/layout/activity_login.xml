@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.LoginActivity">
@@ -26,18 +27,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
 
-    <ImageView
+
+    <TextView
         android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
+        android:layout_width="135dp"
+        android:layout_height="47dp"
         android:layout_gravity="center"
-        android:layout_marginTop="117dp"
-        android:layout_marginBottom="67dp"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/googlesans_bold"
         android:src="@drawable/ic_launcher_background"
+        android:text="Lynkz"
+        android:textColor="@color/black"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -65,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:text="Patient and Blood Management App"
+            android:text="An Pesonalised link sharing platform"
             android:textColor="@color/dim_gray"
             android:textSize="10dp"
 
@@ -80,7 +85,7 @@
         android:layout_marginBottom="14dp"
         android:fontFamily="@font/googlesans_regular"
         android:text="Forgot password?"
-        android:textColor="@color/dodger_blue"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/signinBtn" />
@@ -108,7 +113,7 @@
         android:layout_marginBottom="33dp"
         android:fontFamily="@font/googlesans_bold"
         android:text="SIGN UP NOW"
-        android:textColor="@color/dodger_blue"
+        android:textColor="@color/colorAccent"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView3"

@@ -1,32 +1,29 @@
 package www.sanju.lynkz.Activity
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.*
-import com.squareup.picasso.Picasso
-import io.github.ponnamkarthik.richlinkpreview.RichLinkView
-import io.github.ponnamkarthik.richlinkpreview.ViewListener
 import www.sanju.lynkz.Models.Links
-import www.sanju.lynkz.Models.Subcat
 import www.sanju.lynkz.R
 
 class LinksActivity : AppCompatActivity() {
 
     private lateinit var linksRV: RecyclerView
     private lateinit var linksDB: DatabaseReference
-    private lateinit var richLinkView: RichLinkView
+
+    lateinit var firebaseRecyclerAdapter: FirebaseRecyclerAdapter<Links, MyViewHolder>
 
 
     @SuppressLint("WrongConstant")
@@ -74,7 +71,7 @@ class LinksActivity : AppCompatActivity() {
             .setLifecycleOwner(this)
             .build()
 
-        val firebaseRecyclerAdapter = object : FirebaseRecyclerAdapter<Links, MyViewHolder>(option) {
+        firebaseRecyclerAdapter = object : FirebaseRecyclerAdapter<Links, MyViewHolder>(option) {
 
 
                 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -103,27 +100,18 @@ class LinksActivity : AppCompatActivity() {
 
                         override fun onDataChange(p0: DataSnapshot) {
 
+
                             holder.url.text = model.url
 
-                            richLinkView = holder.itemView.findViewById(R.id.richLinkView)
+                            holder.itemView.setOnClickListener {
 
-                            richLinkView = holder.itemView.findViewById(R.id.richLinkView)
-
-
-                            richLinkView.setLink(
-                                model.url,
-                                object : ViewListener {
-                                    override fun onSuccess(status: Boolean) {
-
-                                        Toast.makeText(this@LinksActivity,"Success",Toast.LENGTH_SHORT).show()
-                                    }
-                                    override fun onError(e: Exception) {
-                                        Toast.makeText(this@LinksActivity,"Failed",Toast.LENGTH_SHORT).show()
-
-                                    }
-                                })
+                                val intent = Intent(this@LinksActivity, WebViewActivity::class.java)
+                                intent.putExtra("key", holder.url.text as String)
+                                startActivity(intent)
+                            }
 
                         }
+
                     })
                 }
             }

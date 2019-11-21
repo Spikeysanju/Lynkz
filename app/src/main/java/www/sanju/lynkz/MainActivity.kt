@@ -1,24 +1,30 @@
 package www.sanju.lynkz
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth.AuthStateListener
+import com.google.firebase.auth.FirebaseUser
+import www.sanju.lynkz.Activity.LoginActivity
 import www.sanju.lynkz.Custom.BottomNavigationBehavior
 import www.sanju.lynkz.Fragments.ExploreFragment
 import www.sanju.lynkz.Fragments.HomeFragment
 import www.sanju.lynkz.Fragments.ProfileFragment
 
+
 class MainActivity : AppCompatActivity() {
 
 
+    private var mAuth: FirebaseAuth? = null
+    private var mAuthListner: AuthStateListener? = null
+    private var mCurrentUsers: FirebaseUser? = null
 
     @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +32,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
+        FirebaseApp.getApps(this)
+        mAuth = FirebaseAuth.getInstance()
+        mCurrentUsers = mAuth!!.currentUser
+
+
+        // updateToken(FirebaseInstanceId.getInstance().getToken());
+
+        // updateToken(FirebaseInstanceId.getInstance().getToken());
+        if (mCurrentUsers != null) {
+
+            Toast.makeText(this, "Welcome Back", Toast.LENGTH_SHORT).show()
+        } else {
+            val loginIntent = Intent(this@MainActivity, LoginActivity::class.java)
+            loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(loginIntent)
+            finish()
+        }
+
+
+        mAuthListner = AuthStateListener { firebaseAuth ->
+            if (firebaseAuth.currentUser == null) {
+                val loginIntent =
+                    Intent(this@MainActivity, LoginActivity::class.java)
+                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(loginIntent)
+                finish()
+            }
+        }
 
 
         bottomNav = findViewById(R.id.bottom_nav)
@@ -64,5 +100,13 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+
+    override fun onStart() {
+        super.onStart()
+
+        mAuthListner?.let { mAuth?.addAuthStateListener(it) }
+
+    }
 
 }

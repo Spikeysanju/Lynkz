@@ -2,13 +2,13 @@ package www.sanju.lynkz.Activity
 
 import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -57,7 +57,8 @@ class SignupActivity : AppCompatActivity() {
         loginNow.setOnClickListener {
 
 
-            startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
+            finish()
+
         }
 
 
